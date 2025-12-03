@@ -39,38 +39,27 @@ export function BlogPreview() {
     >
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-          <div
-            className={cn(
-              "opacity-0",
-              isVisible && "animate-fade-in-up"
-            )}
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Travel Insights
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Latest from Our Blog
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
-              Travel guides, tips, and destination spotlights to inspire your next adventure
-            </p>
-          </div>
-
-          <div
-            className={cn(
-              "opacity-0",
-              isVisible && "animate-fade-in-up"
-            )}
-            style={{ animationDelay: "100ms", animationFillMode: "forwards" }}
-          >
-            <Link href="/blog">
-              <Button variant="outline" className="gap-2" data-testid="button-view-all-blog">
-                View All Articles
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+        <div
+          className={cn(
+            "text-center mb-12 opacity-0",
+            isVisible && "animate-fade-in-up"
+          )}
+        >
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            Travel Insights
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Latest from Our Blog
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
+            Travel guides, tips, and destination spotlights to inspire your next adventure
+          </p>
+          <Link href="/blog">
+            <Button variant="outline" className="gap-2" data-testid="button-view-all-blog">
+              View All Articles
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
 
         {/* Blog grid */}
