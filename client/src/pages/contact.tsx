@@ -320,13 +320,13 @@ export default function Contact() {
         {/* Map */}
         <div className="mt-12">
           <Card className="overflow-hidden">
-            <div className="aspect-[21/9] bg-muted">
+            <div className="aspect-[21/9] bg-muted overflow-hidden">
               <iframe
                 width="100%"
                 height="100%"
                 frameBorder="0"
                 style={{ border: 0 }}
-                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD1dh6_q4Qx0VeUxOC0S-cJgPT2ZixSgM4&q=${encodeURIComponent(companyInfo.address)}`}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0891819562157!2d73.00434132346872!3d19.176901950580347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8f8c8f8c8f9%3A0x9f9f9f9f9f9f9f9f!2sPAP%2001%2C%20Sant%20Jalaram%20Bappa%20Market%2C%20Mulund%20West%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1234567890"
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -338,7 +338,7 @@ export default function Contact() {
             <p className="text-muted-foreground mb-4">{companyInfo.address}</p>
             <Button
               variant="outline"
-              onClick={() => window.open(`https://maps.google.com/?q=${encodeURIComponent(companyInfo.address)}`, "_blank")}
+              onClick={() => window.open("https://maps.app.goo.gl/bihKTUkutLhYoVbG9", "_blank")}
               data-testid="button-open-map"
             >
               Open in Google Maps
