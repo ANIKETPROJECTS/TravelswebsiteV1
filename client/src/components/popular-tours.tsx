@@ -107,14 +107,14 @@ function TourCard({ tour, index }: { tour: Tour; index: number }) {
           )}
 
           {/* Title */}
-          <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+          <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors h-14">
             <Link href={`/tours/${tour.id}`} data-testid={`link-tour-${tour.id}`}>
               {tour.title}
             </Link>
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground mb-3 line-clamp-2 flex-1">
+          <p className="text-sm text-muted-foreground mb-3 line-clamp-2 h-10">
             {tour.shortDescription}
           </p>
 
@@ -256,7 +256,7 @@ export function PopularTours() {
           {featuredTours.map((tour, index) => (
             <div
               key={tour.id}
-              className="flex-shrink-0 w-[360px] snap-start"
+              className="flex-shrink-0 w-[360px] h-[500px] snap-start"
             >
               <TourCard tour={tour} index={index} />
             </div>
