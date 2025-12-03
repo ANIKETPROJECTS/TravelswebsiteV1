@@ -97,7 +97,7 @@ export function FloatingButtons() {
           onClick={openWhatsApp}
           data-testid="button-whatsapp-floating"
         >
-          <SiWhatsapp className="h-6 w-6" />
+          <SiWhatsapp className="h-7 w-7" />
         </Button>
       </div>
     </div>
