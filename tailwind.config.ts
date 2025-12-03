@@ -6,12 +6,11 @@ export default {
   theme: {
     extend: {
       borderRadius: {
-        lg: ".5625rem", /* 9px */
-        md: ".375rem", /* 6px */
-        sm: ".1875rem", /* 3px */
+        lg: ".5625rem",
+        md: ".375rem",
+        sm: ".1875rem",
       },
       colors: {
-        // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
         border: "hsl(var(--border) / <alpha-value>)",
@@ -81,9 +80,47 @@ export default {
           busy: "rgb(239 68 68)",
           offline: "rgb(156 163 175)",
         },
+        // Custom brand colors
+        teal: {
+          50: "#e6f7f8",
+          100: "#b3e8ec",
+          200: "#80d9e0",
+          300: "#4dcad4",
+          400: "#1abbc8",
+          500: "#0a7e8c",
+          600: "#086b77",
+          700: "#065862",
+          800: "#04454d",
+          900: "#023238",
+        },
+        sunset: {
+          50: "#fff0eb",
+          100: "#ffd6c7",
+          200: "#ffbca3",
+          300: "#ffa27f",
+          400: "#ff885b",
+          500: "#ff6b35",
+          600: "#e55a2a",
+          700: "#cc491f",
+          800: "#b23814",
+          900: "#992709",
+        },
+        gold: {
+          50: "#fef7ed",
+          100: "#fce9d0",
+          200: "#f9dbb3",
+          300: "#f7cd96",
+          400: "#f4bf79",
+          500: "#f4a261",
+          600: "#db8c4f",
+          700: "#c2773d",
+          800: "#a9612b",
+          900: "#904c19",
+        },
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
+        heading: ["var(--font-heading)"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
       },
@@ -96,10 +133,55 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "fade-in-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "slide-in-right": {
+          from: { opacity: "0", transform: "translateX(20px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        "scale-in": {
+          from: { opacity: "0", transform: "scale(0.95)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        "count-up": {
+          from: { opacity: "0", transform: "translateY(10px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.5s ease-out",
+        "fade-in-up": "fade-in-up 0.6s ease-out",
+        "slide-in-right": "slide-in-right 0.5s ease-out",
+        "scale-in": "scale-in 0.3s ease-out",
+        "float": "float 3s ease-in-out infinite",
+        "pulse-soft": "pulse-soft 2s ease-in-out infinite",
+        "shimmer": "shimmer 2s linear infinite",
+        "count-up": "count-up 0.5s ease-out",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "hero-gradient": "linear-gradient(135deg, rgba(10, 126, 140, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%)",
+        "dark-wash": "linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%)",
       },
     },
   },
