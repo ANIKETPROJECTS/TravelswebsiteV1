@@ -88,27 +88,15 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        {/* Animated headline */}
+        {/* Main heading */}
         <div className="mb-6">
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white text-shadow-lg">
-            {headlineWords.map((word, index) => (
-              <span
-                key={word}
-                className={cn(
-                  "inline-block transition-all duration-500 mx-2",
-                  index === animatedWordIndex
-                    ? "text-accent scale-110"
-                    : "text-white"
-                )}
-              >
-                {word}
-              </span>
-            ))}
+            Travel World Holidays
           </h1>
         </div>
 
         <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto text-shadow">
-          Quality Is Our Responsibility. Discover extraordinary destinations and create memories that last a lifetime.
+          Quality Is Our Responsibility
         </p>
 
         {/* Smart Search Bar */}
