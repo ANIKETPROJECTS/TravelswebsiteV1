@@ -17,7 +17,7 @@ const heroImages = [
   "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1920",
 ];
 
-const headlineWords = ["Explore.", "Dream.", "Discover."];
+const headlineWords = ["Travel", "Explore", "Discover"];
 
 export function Hero() {
   const [, setLocation] = useLocation();
@@ -108,8 +108,7 @@ export function Hero() {
         </div>
 
         <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto text-shadow">
-          Discover extraordinary destinations and create memories that last a lifetime.
-          Your adventure begins here.
+          Quality Is Our Responsibility. Discover extraordinary destinations and create memories that last a lifetime.
         </p>
 
         {/* Smart Search Bar */}

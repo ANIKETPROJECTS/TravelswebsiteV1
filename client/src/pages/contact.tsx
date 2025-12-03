@@ -320,22 +320,30 @@ export default function Contact() {
         {/* Map */}
         <div className="mt-12">
           <Card className="overflow-hidden">
-            <div className="aspect-[21/9] bg-muted flex items-center justify-center">
-              <div className="text-center p-8">
-                <MapPin className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                <h3 className="font-heading text-lg font-semibold mb-2">Visit Our Office</h3>
-                <p className="text-muted-foreground">{companyInfo.address}</p>
-                <Button
-                  variant="outline"
-                  className="mt-4"
-                  onClick={() => window.open(`https://maps.google.com/?q=${encodeURIComponent(companyInfo.address)}`, "_blank")}
-                  data-testid="button-open-map"
-                >
-                  Open in Google Maps
-                </Button>
-              </div>
+            <div className="aspect-[21/9] bg-muted">
+              <iframe
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                style={{ border: 0 }}
+                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD1dh6_q4Qx0VeUxOC0S-cJgPT2ZixSgM4&q=${encodeURIComponent(companyInfo.address)}`}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </Card>
+          <div className="mt-4 text-center">
+            <h3 className="font-heading text-lg font-semibold mb-2">Visit Our Office</h3>
+            <p className="text-muted-foreground mb-4">{companyInfo.address}</p>
+            <Button
+              variant="outline"
+              onClick={() => window.open(`https://maps.google.com/?q=${encodeURIComponent(companyInfo.address)}`, "_blank")}
+              data-testid="button-open-map"
+            >
+              Open in Google Maps
+            </Button>
+          </div>
         </div>
 
         {/* FAQ Section */}

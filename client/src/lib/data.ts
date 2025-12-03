@@ -669,10 +669,10 @@ export const companyStats = {
 
 // Company contact info
 export const companyInfo = {
-  phone: "+1 (800) 123-4567",
-  email: "hello@wanderlusttours.com",
-  whatsapp: "+1 (800) 123-4567",
-  address: "123 Adventure Lane, Travel City, TC 12345",
+  phone: "+91 9892029466",
+  email: "travelworldholidays1@gmail.com",
+  whatsapp: "+91 9892029466",
+  address: "Office No. PAP 01, Sant Jalaram Bappa Market S, L. Road Mulund West, Mumbai, India",
   officeHours: "Mon-Fri: 9AM-8PM | Sat-Sun: 10AM-6PM",
   socialMedia: {
     facebook: "https://facebook.com",
