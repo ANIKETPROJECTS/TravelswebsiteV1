@@ -56,11 +56,11 @@ function TourCard({ tour, index }: { tour: Tour; index: number }) {
       style={{ animationDelay: `${index * 100}ms`, animationFillMode: "forwards" }}
     >
       <Card
-        className="group overflow-visible hover-elevate h-full flex flex-col"
+        className="group overflow-hidden hover-elevate h-full flex flex-col"
         data-testid={`card-tour-${tour.id}`}
       >
         {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-t-lg flex-shrink-0">
           <img
             src={tour.imageUrl}
             alt={tour.title}
@@ -101,7 +101,7 @@ function TourCard({ tour, index }: { tour: Tour; index: number }) {
         <div className="p-5 flex-1 flex flex-col">
           {/* Location */}
           {destination && (
-            <span className="text-sm text-muted-foreground mb-1">
+            <span className="text-sm text-muted-foreground mb-1 line-clamp-1">
               {destination.name}, {destination.country}
             </span>
           )}
@@ -114,43 +114,42 @@ function TourCard({ tour, index }: { tour: Tour; index: number }) {
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-1">
+          <p className="text-sm text-muted-foreground mb-3 line-clamp-2 flex-1">
             {tour.shortDescription}
           </p>
 
           {/* Meta info */}
-          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+          <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4 flex-wrap">
             <div className="flex items-center gap-1">
-              <Clock className="h-4 w-4" />
-              <span>{tour.duration}</span>
+              <Clock className="h-3.5 w-3.5 flex-shrink-0" />
+              <span className="line-clamp-1">{tour.duration}</span>
             </div>
             <div className="flex items-center gap-1">
-              <Users className="h-4 w-4" />
-              <span>Max {tour.maxGroupSize}</span>
+              <Users className="h-3.5 w-3.5 flex-shrink-0" />
+              <span className="line-clamp-1">Max {tour.maxGroupSize}</span>
             </div>
             <div className="flex items-center gap-1">
-              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              <span>{tour.rating}</span>
-              <span className="text-muted-foreground/60">({tour.reviewCount})</span>
+              <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400 flex-shrink-0" />
+              <span className="line-clamp-1">{tour.rating} ({tour.reviewCount})</span>
             </div>
           </div>
 
           {/* Price and CTA */}
-          <div className="flex items-center justify-between pt-4 border-t border-border">
-            <div>
+          <div className="flex items-center justify-between gap-3 pt-4 border-t border-border mt-auto flex-wrap">
+            <div className="flex-1 min-w-0">
               {tour.originalPrice && (
-                <span className="text-sm text-muted-foreground line-through mr-2">
+                <span className="text-xs text-muted-foreground line-through mr-2">
                   ${tour.originalPrice.toLocaleString()}
                 </span>
               )}
-              <span className="font-heading font-bold text-xl text-primary">
+              <span className="font-heading font-bold text-lg text-primary">
                 ${tour.price.toLocaleString()}
               </span>
-              <span className="text-sm text-muted-foreground">/person</span>
+              <span className="text-xs text-muted-foreground block">/person</span>
             </div>
 
-            <Link href={`/tours/${tour.id}`}>
-              <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground" data-testid={`button-inquire-${tour.id}`}>
+            <Link href={`/tours/${tour.id}`} className="flex-shrink-0">
+              <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground whitespace-nowrap" data-testid={`button-inquire-${tour.id}`}>
                 Inquire Now
               </Button>
             </Link>
@@ -257,7 +256,7 @@ export function PopularTours() {
           {featuredTours.map((tour, index) => (
             <div
               key={tour.id}
-              className="flex-shrink-0 w-[350px] h-[520px] snap-start"
+              className="flex-shrink-0 w-[360px] snap-start"
             >
               <TourCard tour={tour} index={index} />
             </div>
