@@ -1,7 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist"
-  functions = "netlify/functions"
+  publish = "dist/public"
 
 [dev]
   command = "npm run dev"
@@ -9,8 +8,9 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server:splat"
+  to = "YOUR_BACKEND_URL/api/:splat"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
