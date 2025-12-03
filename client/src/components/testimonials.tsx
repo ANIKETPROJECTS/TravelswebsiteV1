@@ -49,7 +49,7 @@ export function Testimonials() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-muted/30 relative overflow-hidden"
+      className="py-12 lg:py-16 bg-muted/30 relative overflow-hidden"
       data-testid="testimonials-section"
     >
       {/* Background decoration */}

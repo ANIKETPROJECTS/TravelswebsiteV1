@@ -198,7 +198,7 @@ export function PopularTours() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-muted/30"
+      className="py-12 lg:py-16 bg-muted/30"
       data-testid="popular-tours-section"
     >
       <div className="container mx-auto px-4">

@@ -114,7 +114,7 @@ export function WhyChooseUs() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-background relative overflow-hidden"
+      className="py-12 lg:py-16 bg-background relative overflow-hidden"
       data-testid="why-choose-us-section"
     >
       {/* Background decoration */}

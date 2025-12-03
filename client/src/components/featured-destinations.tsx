@@ -163,7 +163,7 @@ export function FeaturedDestinations() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-background"
+      className="py-12 lg:py-16 bg-background"
       data-testid="featured-destinations-section"
     >
       <div className="container mx-auto px-4">

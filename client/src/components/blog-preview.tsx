@@ -34,7 +34,7 @@ export function BlogPreview() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-background"
+      className="py-12 lg:py-16 bg-background"
       data-testid="blog-preview-section"
     >
       <div className="container mx-auto px-4">
