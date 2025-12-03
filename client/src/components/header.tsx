@@ -8,7 +8,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -96,26 +95,24 @@ export function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" data-testid="link-logo">
-              <a className="flex items-center gap-2 group">
-                <div className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-heading font-bold text-xl">
-                  W
-                </div>
-                <div className="flex flex-col">
-                  <span className={cn(
-                    "font-heading font-bold text-lg leading-tight transition-colors",
-                    isScrolled || !isHome ? "text-foreground" : "text-white"
-                  )}>
-                    Wanderlust
-                  </span>
-                  <span className={cn(
-                    "text-xs uppercase tracking-wider transition-colors",
-                    isScrolled || !isHome ? "text-muted-foreground" : "text-white/80"
-                  )}>
-                    Tours & Travel
-                  </span>
-                </div>
-              </a>
+            <Link href="/" className="flex items-center gap-2 group" data-testid="link-logo">
+              <div className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-heading font-bold text-xl">
+                W
+              </div>
+              <div className="flex flex-col">
+                <span className={cn(
+                  "font-heading font-bold text-lg leading-tight transition-colors",
+                  isScrolled || !isHome ? "text-foreground" : "text-white"
+                )}>
+                  Wanderlust
+                </span>
+                <span className={cn(
+                  "text-xs uppercase tracking-wider transition-colors",
+                  isScrolled || !isHome ? "text-muted-foreground" : "text-white/80"
+                )}>
+                  Tours & Travel
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -141,44 +138,42 @@ export function Header() {
                             <div className="w-[400px] p-4">
                               <div className="grid grid-cols-2 gap-2">
                                 {destinations.map((dest) => (
-                                  <Link key={dest.name} href={dest.href}>
-                                    <NavigationMenuLink
-                                      className="block p-3 rounded-md hover-elevate cursor-pointer"
-                                      data-testid={`nav-dest-${dest.name.toLowerCase().replace(/[^a-z]/g, '-')}`}
-                                    >
-                                      <span className="font-medium">{dest.name}</span>
-                                    </NavigationMenuLink>
+                                  <Link
+                                    key={dest.name}
+                                    href={dest.href}
+                                    className="block p-3 rounded-md hover-elevate cursor-pointer"
+                                    data-testid={`nav-dest-${dest.name.toLowerCase().replace(/[^a-z]/g, '-')}`}
+                                  >
+                                    <span className="font-medium">{dest.name}</span>
                                   </Link>
                                 ))}
                               </div>
                               <div className="mt-4 pt-4 border-t">
-                                <Link href="/destinations">
-                                  <NavigationMenuLink
-                                    className="block p-3 rounded-md bg-primary/5 hover:bg-primary/10 text-center font-medium text-primary cursor-pointer"
-                                    data-testid="nav-view-all-destinations"
-                                  >
-                                    View All Destinations
-                                  </NavigationMenuLink>
+                                <Link
+                                  href="/destinations"
+                                  className="block p-3 rounded-md bg-primary/5 hover:bg-primary/10 text-center font-medium text-primary cursor-pointer"
+                                  data-testid="nav-view-all-destinations"
+                                >
+                                  View All Destinations
                                 </Link>
                               </div>
                             </div>
                           </NavigationMenuContent>
                         </>
                       ) : (
-                        <Link href={link.href}>
-                          <NavigationMenuLink
-                            className={cn(
-                              "px-4 py-2 font-medium transition-colors inline-block",
-                              location === link.href
-                                ? "text-accent"
-                                : isScrolled || !isHome
-                                ? "text-foreground hover:text-primary"
-                                : "text-white/90 hover:text-white"
-                            )}
-                            data-testid={`nav-${link.label.toLowerCase().replace(' ', '-')}`}
-                          >
-                            {link.label}
-                          </NavigationMenuLink>
+                        <Link
+                          href={link.href}
+                          className={cn(
+                            "px-4 py-2 font-medium transition-colors inline-block",
+                            location === link.href
+                              ? "text-accent"
+                              : isScrolled || !isHome
+                              ? "text-foreground hover:text-primary"
+                              : "text-white/90 hover:text-white"
+                          )}
+                          data-testid={`nav-${link.label.toLowerCase().replace(' ', '-')}`}
+                        >
+                          {link.label}
                         </Link>
                       )}
                     </NavigationMenuItem>
@@ -219,18 +214,17 @@ export function Header() {
                   <nav className="flex flex-col gap-4 mt-8">
                     {navLinks.map((link) => (
                       <SheetClose asChild key={link.href}>
-                        <Link href={link.href}>
-                          <a
-                            className={cn(
-                              "text-lg font-medium py-2 transition-colors",
-                              location === link.href
-                                ? "text-accent"
-                                : "text-foreground hover:text-primary"
-                            )}
-                            data-testid={`mobile-nav-${link.label.toLowerCase().replace(' ', '-')}`}
-                          >
-                            {link.label}
-                          </a>
+                        <Link
+                          href={link.href}
+                          className={cn(
+                            "text-lg font-medium py-2 transition-colors",
+                            location === link.href
+                              ? "text-accent"
+                              : "text-foreground hover:text-primary"
+                          )}
+                          data-testid={`mobile-nav-${link.label.toLowerCase().replace(' ', '-')}`}
+                        >
+                          {link.label}
                         </Link>
                       </SheetClose>
                     ))}

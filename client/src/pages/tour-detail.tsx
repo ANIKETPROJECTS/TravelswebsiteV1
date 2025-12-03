@@ -79,12 +79,12 @@ export default function TourDetail() {
       <div className="bg-muted/30 py-4">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link href="/">
-              <a className="hover:text-foreground">Home</a>
+            <Link href="/" className="hover:text-foreground">
+              Home
             </Link>
             <ChevronRight className="h-4 w-4" />
-            <Link href="/tours">
-              <a className="hover:text-foreground">Tours</a>
+            <Link href="/tours" className="hover:text-foreground">
+              Tours
             </Link>
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground">{tour.title}</span>

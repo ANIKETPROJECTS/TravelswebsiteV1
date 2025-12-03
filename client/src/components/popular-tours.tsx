@@ -108,8 +108,8 @@ function TourCard({ tour, index }: { tour: Tour; index: number }) {
 
           {/* Title */}
           <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-            <Link href={`/tours/${tour.id}`}>
-              <a data-testid={`link-tour-${tour.id}`}>{tour.title}</a>
+            <Link href={`/tours/${tour.id}`} data-testid={`link-tour-${tour.id}`}>
+              {tour.title}
             </Link>
           </h3>
 

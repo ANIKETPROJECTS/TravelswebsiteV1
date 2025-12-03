@@ -120,8 +120,8 @@ export function BlogPreview() {
 
                 {/* Title */}
                 <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                  <Link href={`/blog/${post.slug}`}>
-                    <a data-testid={`link-blog-${post.id}`}>{post.title}</a>
+                  <Link href={`/blog/${post.slug}`} data-testid={`link-blog-${post.id}`}>
+                    {post.title}
                   </Link>
                 </h3>
 
@@ -131,11 +131,9 @@ export function BlogPreview() {
                 </p>
 
                 {/* Read more */}
-                <Link href={`/blog/${post.slug}`}>
-                  <a className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all">
-                    Read More
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
+                <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all">
+                  Read More
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </Card>

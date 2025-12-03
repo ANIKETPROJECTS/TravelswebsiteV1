@@ -272,8 +272,8 @@ export default function Tours() {
                           </span>
                         )}
                         <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                          <Link href={`/tours/${tour.id}`}>
-                            <a data-testid={`link-tour-${tour.id}`}>{tour.title}</a>
+                          <Link href={`/tours/${tour.id}`} data-testid={`link-tour-${tour.id}`}>
+                            {tour.title}
                           </Link>
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4 line-clamp-2">

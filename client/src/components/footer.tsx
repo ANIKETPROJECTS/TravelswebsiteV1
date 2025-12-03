@@ -16,12 +16,12 @@ const quickLinks = [
 ];
 
 const destinations = [
-  { label: "Bali, Indonesia", href: "/destinations?region=asia" },
-  { label: "Santorini, Greece", href: "/destinations?region=europe" },
-  { label: "Maldives", href: "/destinations?region=asia" },
-  { label: "Tokyo, Japan", href: "/destinations?region=asia" },
-  { label: "Machu Picchu, Peru", href: "/destinations?region=south-america" },
-  { label: "Safari Kenya", href: "/destinations?region=africa" },
+  { id: "bali", label: "Bali, Indonesia", href: "/destinations?region=asia&highlight=bali" },
+  { id: "santorini", label: "Santorini, Greece", href: "/destinations?region=europe&highlight=santorini" },
+  { id: "maldives", label: "Maldives", href: "/destinations?region=asia&highlight=maldives" },
+  { id: "tokyo", label: "Tokyo, Japan", href: "/destinations?region=asia&highlight=tokyo" },
+  { id: "machu-picchu", label: "Machu Picchu, Peru", href: "/destinations?region=south-america" },
+  { id: "kenya", label: "Safari Kenya", href: "/destinations?region=africa" },
 ];
 
 const socialLinks = [
@@ -155,13 +155,12 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}>
-                    <a
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
-                      data-testid={`footer-link-${link.label.toLowerCase().replace(' ', '-')}`}
-                    >
-                      {link.label}
-                    </a>
+                  <Link
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    data-testid={`footer-link-${link.label.toLowerCase().replace(' ', '-')}`}
+                  >
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -173,14 +172,13 @@ export function Footer() {
             <h4 className="font-heading font-semibold text-white mb-6">Top Destinations</h4>
             <ul className="space-y-3">
               {destinations.map((dest) => (
-                <li key={dest.href}>
-                  <Link href={dest.href}>
-                    <a
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
-                      data-testid={`footer-dest-${dest.label.toLowerCase().replace(/[^a-z]/g, '-')}`}
-                    >
-                      {dest.label}
-                    </a>
+                <li key={dest.id}>
+                  <Link
+                    href={dest.href}
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    data-testid={`footer-dest-${dest.id}`}
+                  >
+                    {dest.label}
                   </Link>
                 </li>
               ))}
@@ -239,20 +237,14 @@ export function Footer() {
               © {new Date().getFullYear()} Wanderlust Tours & Travel. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <Link href="/privacy">
-                <a className="hover:text-white transition-colors" data-testid="footer-privacy">
-                  Privacy Policy
-                </a>
+              <Link href="/privacy" className="hover:text-white transition-colors" data-testid="footer-privacy">
+                Privacy Policy
               </Link>
-              <Link href="/terms">
-                <a className="hover:text-white transition-colors" data-testid="footer-terms">
-                  Terms & Conditions
-                </a>
+              <Link href="/terms" className="hover:text-white transition-colors" data-testid="footer-terms">
+                Terms & Conditions
               </Link>
-              <Link href="/sitemap">
-                <a className="hover:text-white transition-colors" data-testid="footer-sitemap">
-                  Sitemap
-                </a>
+              <Link href="/sitemap" className="hover:text-white transition-colors" data-testid="footer-sitemap">
+                Sitemap
               </Link>
             </div>
           </div>

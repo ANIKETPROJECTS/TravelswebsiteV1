@@ -87,8 +87,8 @@ export default function Blog() {
                   {featuredPost.category}
                 </Badge>
                 <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-                  <Link href={`/blog/${featuredPost.slug}`}>
-                    <a data-testid="link-featured-post">{featuredPost.title}</a>
+                  <Link href={`/blog/${featuredPost.slug}`} data-testid="link-featured-post">
+                    {featuredPost.title}
                   </Link>
                 </h2>
                 <p className="text-muted-foreground mb-6">{featuredPost.excerpt}</p>
@@ -166,18 +166,16 @@ export default function Blog() {
                     </div>
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                    <Link href={`/blog/${post.slug}`}>
-                      <a data-testid={`link-blog-${post.id}`}>{post.title}</a>
+                    <Link href={`/blog/${post.slug}`} data-testid={`link-blog-${post.id}`}>
+                      {post.title}
                     </Link>
                   </h3>
                   <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
                     {post.excerpt}
                   </p>
-                  <Link href={`/blog/${post.slug}`}>
-                    <a className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all">
-                      Read More
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all">
+                    Read More
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </Card>
