@@ -19,10 +19,13 @@ const heroImages = [
 
 const words = ["Travel", "World", "Holidays"];
 
+const tagline = "Quality Is Our Responsibility";
+
 export function Hero() {
   const [, setLocation] = useLocation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [highlightedWordIndex, setHighlightedWordIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
   
   // Search form state
   const [destination, setDestination] = useState("");
@@ -46,8 +49,22 @@ export function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setHighlightedWordIndex((prev) => (prev + 1) % words.length);
-    }, 1000);
+    }, 1500);
     return () => clearInterval(interval);
+  }, []);
+
+  // Typewriter effect for tagline
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index <= tagline.length) {
+        setDisplayedText(tagline.slice(0, index));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 50);
+    return () => clearInterval(timer);
   }, []);
 
   const handleSearch = () => {
@@ -95,7 +112,7 @@ export function Hero() {
               <span
                 key={word}
                 className={cn(
-                  "inline-block transition-all duration-300 mx-1",
+                  "inline-block transition-all duration-500 mx-1",
                   index === highlightedWordIndex ? "text-accent" : "text-white"
                 )}
               >
@@ -105,8 +122,9 @@ export function Hero() {
           </h1>
         </div>
 
-        <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto text-shadow">
-          Quality Is Our Responsibility
+        <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto text-shadow h-8">
+          {displayedText}
+          {displayedText.length < tagline.length && <span className="animate-pulse">|</span>}
         </p>
 
         {/* Smart Search Bar */}
