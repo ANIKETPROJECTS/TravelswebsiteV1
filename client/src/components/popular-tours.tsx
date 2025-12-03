@@ -257,7 +257,7 @@ export function PopularTours() {
           {featuredTours.map((tour, index) => (
             <div
               key={tour.id}
-              className="flex-shrink-0 w-[350px] snap-start"
+              className="flex-shrink-0 w-[350px] h-[520px] snap-start"
             >
               <TourCard tour={tour} index={index} />
             </div>
