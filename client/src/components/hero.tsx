@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
-import { Search, Calendar, Users, DollarSign, ChevronDown, MapPin } from "lucide-react";
+import { Search, Calendar, Users, DollarSign, ChevronDown, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -17,7 +17,8 @@ const heroImages = [
   "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1920",
 ];
 
-const headlineWords = ["Travel", "Explore", "Discover"];
+const headlineWords = ["Travel World Holidays"];
+const animatedWords = ["Travel", "Explore", "Discover"];
 
 export function Hero() {
   const [, setLocation] = useLocation();
@@ -45,7 +46,7 @@ export function Hero() {
   // Animate headline words
   useEffect(() => {
     const interval = setInterval(() => {
-      setAnimatedWordIndex((prev) => (prev + 1) % headlineWords.length);
+      setAnimatedWordIndex((prev) => (prev + 1) % animatedWords.length);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -88,10 +89,25 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        {/* Main heading */}
+        {/* Main heading with animated color cycling */}
         <div className="mb-6">
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white text-shadow-lg">
-            Travel World Holidays
+            <span className="transition-all duration-500">
+              {animatedWords[animatedWordIndex]}
+            </span>
+            {animatedWordIndex === 0 && (
+              <span className="text-accent"> World</span>
+            )}
+            {animatedWordIndex === 1 && (
+              <span className="text-white"> World</span>
+            )}
+            {animatedWordIndex === 2 && (
+              <span className="text-white"> World</span>
+            )}
+            {' '}
+            <span className="text-white">
+              {animatedWordIndex === 0 ? "Holidays" : "Moments"}
+            </span>
           </h1>
         </div>
 

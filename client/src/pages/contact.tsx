@@ -6,6 +6,7 @@ import {
   Phone, Mail, MapPin, Clock, MessageCircle, Send, 
   Loader2, CheckCircle, Facebook, Instagram, Twitter, Youtube
 } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -30,6 +31,7 @@ const socialLinks = [
   { icon: Instagram, href: companyInfo.socialMedia.instagram, label: "Instagram" },
   { icon: Twitter, href: companyInfo.socialMedia.twitter, label: "Twitter" },
   { icon: Youtube, href: companyInfo.socialMedia.youtube, label: "YouTube" },
+  { icon: SiWhatsapp, href: `https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}`, label: "WhatsApp" },
 ];
 
 export default function Contact() {
