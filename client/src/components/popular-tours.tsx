@@ -203,50 +203,49 @@ export function PopularTours() {
     >
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-          <div
-            className={cn(
-              "opacity-0",
-              isVisible && "animate-fade-in-up"
-            )}
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
-              Best Sellers
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Popular Tour Packages
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
-              Handpicked tours loved by thousands of travelers worldwide
-            </p>
-          </div>
+        <div
+          className={cn(
+            "text-center mb-12 opacity-0",
+            isVisible && "animate-fade-in-up"
+          )}
+        >
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+            Best Sellers
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Popular Tour Packages
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
+            Handpicked tours loved by thousands of travelers worldwide
+          </p>
+        </div>
 
-          <div
-            className={cn(
-              "flex items-center gap-3 opacity-0",
-              isVisible && "animate-fade-in-up"
-            )}
-            style={{ animationDelay: "100ms", animationFillMode: "forwards" }}
+        {/* Scroll controls */}
+        <div
+          className={cn(
+            "flex items-center justify-center gap-3 mb-8 opacity-0",
+            isVisible && "animate-fade-in-up"
+          )}
+          style={{ animationDelay: "100ms", animationFillMode: "forwards" }}
+        >
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => scroll("left")}
+            className="rounded-full"
+            data-testid="button-scroll-left"
           >
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => scroll("left")}
-              className="rounded-full"
-              data-testid="button-scroll-left"
-            >
-              <ArrowLeft className="h-5 w-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => scroll("right")}
-              className="rounded-full"
-              data-testid="button-scroll-right"
-            >
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-          </div>
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => scroll("right")}
+            className="rounded-full"
+            data-testid="button-scroll-right"
+          >
+            <ArrowRight className="h-5 w-5" />
+          </Button>
         </div>
 
         {/* Scrollable container */}
