@@ -1,0 +1,51 @@
+chunk-RPCDYKBN.js?v=4a878532:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+contact.tsx:311 Uncaught ReferenceError: cn is not defined
+    at contact.tsx:311:32
+    at Array.map (<anonymous>)
+    at Contact (contact.tsx:305:30)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=4a878532:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=4a878532:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=4a878532:15914:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=4a878532:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=4a878532:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=4a878532:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=4a878532:19765:15)
+contact.tsx:311 Uncaught ReferenceError: cn is not defined
+    at contact.tsx:311:32
+    at Array.map (<anonymous>)
+    at Contact (contact.tsx:305:30)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=4a878532:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=4a878532:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=4a878532:15914:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=4a878532:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=4a878532:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=4a878532:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=4a878532:19765:15)
+chunk-RPCDYKBN.js?v=4a878532:14032 The above error occurred in the <Contact> component:
+
+    at Contact (https://fda8abc7-c9a3-42be-b744-1f1e0d038d9b-00-140cmacva4hws.riker.replit.dev/src/pages/contact.tsx:61:43)
+    at Route (https://fda8abc7-c9a3-42be-b744-1f1e0d038d9b-00-140cmacva4hws.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=4a878532:323:16)
+    at Switch (https://fda8abc7-c9a3-42be-b744-1f1e0d038d9b-00-140cmacva4hws.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=4a878532:379:17)
+    at Router
+    at div
+    at div
+    at Provider (https://fda8abc7-c9a3-42be-b744-1f1e0d038d9b-00-140cmacva4hws.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-5AJU3CG7.js?v=4a878532:38:15)
+    at TooltipProvider (https://fda8abc7-c9a3-42be-b744-1f1e0d038d9b-00-140cmacva4hws.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=4a878532:63:5)
+    at QueryClientProvider (https://fda8abc7-c9a3-42be-b744-1f1e0d038d9b-00-140cmacva4hws.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=4a878532:2805:3)
+    at ThemeProvider (https://fda8abc7-c9a3-42be-b744-1f1e0d038d9b-00-140cmacva4hws.riker.replit.dev/src/lib/theme-provider.tsx:25:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ chunk-RPCDYKBN.js?v=4a878532:14032
+chunk-RPCDYKBN.js?v=4a878532:19413 Uncaught ReferenceError: cn is not defined
+    at contact.tsx:311:32
+    at Array.map (<anonymous>)
+    at Contact (contact.tsx:305:30)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=4a878532:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=4a878532:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=4a878532:15914:22)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=4a878532:19753:22)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=4a878532:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=4a878532:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=4a878532:19116:15)

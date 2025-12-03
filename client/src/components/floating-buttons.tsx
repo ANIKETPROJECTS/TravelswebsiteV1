@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Phone, MessageCircle, X, ChevronUp } from "lucide-react";
+import { Phone, X, ChevronUp } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { companyInfo } from "@/lib/data";
@@ -96,7 +97,7 @@ export function FloatingButtons() {
           onClick={openWhatsApp}
           data-testid="button-whatsapp-floating"
         >
-          <MessageCircle className="h-6 w-6" />
+          <SiWhatsapp className="h-6 w-6" />
         </Button>
       </div>
     </div>
