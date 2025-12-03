@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  animation: marquee 60s linear infinite;
+}
+
 /* LIGHT MODE - Deep Teal/Ocean Blue (#0A7E8C) as primary, Sunset Orange (#FF6B35) as accent */
 :root {
   --button-outline: rgba(0,0,0, .10);
