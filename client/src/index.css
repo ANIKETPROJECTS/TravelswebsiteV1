@@ -4,15 +4,15 @@
 
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .marquee {
-  animation: marquee 60s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 /* LIGHT MODE - Deep Teal/Ocean Blue (#0A7E8C) as primary, Sunset Orange (#FF6B35) as accent */

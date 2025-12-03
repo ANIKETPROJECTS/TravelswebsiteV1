@@ -45,8 +45,8 @@ export function Testimonials() {
   }, []);
 
   const featuredTestimonials = sampleTestimonials.filter(t => t.featured).slice(0, 6);
-  // Duplicate testimonials for seamless marquee loop
-  const marqueeTestimonials = [...featuredTestimonials, ...featuredTestimonials];
+  // Duplicate testimonials for seamless marquee loop (3x for smooth continuous animation)
+  const marqueeTestimonials = [...featuredTestimonials, ...featuredTestimonials, ...featuredTestimonials];
 
   return (
     <section
