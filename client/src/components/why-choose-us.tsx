@@ -196,7 +196,7 @@ export function WhyChooseUs() {
           {["TripAdvisor", "Lonely Planet", "Travel + Leisure", "Condé Nast"].map((brand) => (
             <div
               key={brand}
-              className="px-5 py-2 bg-white/10 border border-white/20 rounded-full font-medium text-white/80 hover:bg-white/20 hover:text-white transition-all"
+              className="px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
             >
               {brand}
             </div>
