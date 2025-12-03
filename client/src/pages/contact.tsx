@@ -308,7 +308,12 @@ export default function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all"
+                    className={cn(
+                      "w-10 h-10 rounded-full flex items-center justify-center transition-all",
+                      social.label === "WhatsApp"
+                        ? "bg-green-500 hover:bg-green-600 text-white"
+                        : "bg-muted hover:bg-primary hover:text-white text-muted-foreground"
+                    )}
                     data-testid={`social-${social.label.toLowerCase()}`}
                   >
                     <social.icon className="h-5 w-5" />
