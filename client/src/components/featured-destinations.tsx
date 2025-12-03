@@ -10,11 +10,11 @@ import type { Destination } from "@shared/schema";
 
 type Filter = "all" | "trending" | "popular" | "new";
 
-const filters: { label: string; value: Filter; icon: typeof TrendingUp }[] = [
-  { label: "All", value: "all", icon: Sparkles },
-  { label: "Trending", value: "trending", icon: TrendingUp },
-  { label: "Popular", value: "popular", icon: Flame },
-  { label: "New", value: "new", icon: Sparkles },
+const filters: { label: string; value: Filter; icon: string }[] = [
+  { label: "All", value: "all", icon: "/generated_images/all_destinations_colorful_icon.png" },
+  { label: "Trending", value: "trending", icon: "/generated_images/trending_destinations_icon.png" },
+  { label: "Popular", value: "popular", icon: "/generated_images/popular_destinations_icon.png" },
+  { label: "New", value: "new", icon: "/generated_images/new_destinations_icon.png" },
 ];
 
 function DestinationCard({ destination, index }: { destination: Destination; index: number }) {
@@ -204,7 +204,7 @@ export function FeaturedDestinations() {
               )}
               data-testid={`filter-${filter.value}`}
             >
-              <filter.icon className="h-4 w-4" />
+              <img src={filter.icon} alt={filter.label} className="h-5 w-5" />
               {filter.label}
             </Button>
           ))}
