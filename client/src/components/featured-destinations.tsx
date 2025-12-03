@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { Star, MapPin, ArrowRight, TrendingUp, Flame, Sparkles } from "lucide-react";
+import { Star, MapPin, ArrowRight, TrendingUp, Flame, Sparkles, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -10,11 +10,11 @@ import type { Destination } from "@shared/schema";
 
 type Filter = "all" | "trending" | "popular" | "new";
 
-const filters: { label: string; value: Filter; emoji: string }[] = [
-  { label: "All", value: "all", emoji: "🌍" },
-  { label: "Trending", value: "trending", emoji: "📈" },
-  { label: "Popular", value: "popular", emoji: "⭐" },
-  { label: "New", value: "new", emoji: "✨" },
+const filters: { label: string; value: Filter; icon: any }[] = [
+  { label: "All", value: "all", icon: Globe },
+  { label: "Trending", value: "trending", icon: TrendingUp },
+  { label: "Popular", value: "popular", icon: Flame },
+  { label: "New", value: "new", icon: Sparkles },
 ];
 
 function DestinationCard({ destination, index }: { destination: Destination; index: number }) {
@@ -204,7 +204,7 @@ export function FeaturedDestinations() {
               )}
               data-testid={`filter-${filter.value}`}
             >
-              <span>{filter.emoji}</span>
+              <filter.icon className="w-4 h-4" />
               {filter.label}
             </Button>
           ))}

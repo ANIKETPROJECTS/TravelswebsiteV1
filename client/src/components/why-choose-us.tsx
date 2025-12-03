@@ -84,7 +84,7 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
   };
 
   return (
-    <span ref={ref} className="font-heading text-4xl md:text-5xl font-bold text-primary">
+    <span ref={ref} className="font-heading text-4xl md:text-5xl font-bold text-white">
       {formatNumber(count)}{suffix}
     </span>
   );
@@ -187,16 +187,16 @@ export function WhyChooseUs() {
         {/* Trust badges */}
         <div
           className={cn(
-            "flex flex-wrap items-center justify-center gap-8 mt-16 opacity-0",
+            "flex flex-wrap items-center justify-center gap-6 mt-16 opacity-0",
             isVisible && "animate-fade-in-up"
           )}
           style={{ animationDelay: "500ms", animationFillMode: "forwards" }}
         >
-          <span className="text-muted-foreground font-medium">As Featured In:</span>
+          <span className="text-muted-foreground font-semibold text-sm">As Featured In:</span>
           {["TripAdvisor", "Lonely Planet", "Travel + Leisure", "Condé Nast"].map((brand) => (
             <div
               key={brand}
-              className="px-6 py-3 bg-muted rounded-lg font-medium text-muted-foreground"
+              className="px-5 py-2 bg-white/10 border border-white/20 rounded-full font-medium text-white/80 hover:bg-white/20 hover:text-white transition-all"
             >
               {brand}
             </div>
