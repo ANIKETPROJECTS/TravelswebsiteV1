@@ -10,11 +10,11 @@ import type { Destination } from "@shared/schema";
 
 type Filter = "all" | "trending" | "popular" | "new";
 
-const filters: { label: string; value: Filter; icon: string }[] = [
-  { label: "All", value: "all", icon: "/generated_images/all_destinations_colorful_icon.png" },
-  { label: "Trending", value: "trending", icon: "/generated_images/trending_destinations_icon.png" },
-  { label: "Popular", value: "popular", icon: "/generated_images/popular_destinations_icon.png" },
-  { label: "New", value: "new", icon: "/generated_images/new_destinations_icon.png" },
+const filters: { label: string; value: Filter; emoji: string }[] = [
+  { label: "All", value: "all", emoji: "🌍" },
+  { label: "Trending", value: "trending", emoji: "📈" },
+  { label: "Popular", value: "popular", emoji: "⭐" },
+  { label: "New", value: "new", emoji: "✨" },
 ];
 
 function DestinationCard({ destination, index }: { destination: Destination; index: number }) {
@@ -199,12 +199,12 @@ export function FeaturedDestinations() {
               variant={activeFilter === filter.value ? "default" : "outline"}
               onClick={() => setActiveFilter(filter.value)}
               className={cn(
-                "gap-2",
+                "gap-2 text-lg",
                 activeFilter === filter.value && "bg-primary text-primary-foreground"
               )}
               data-testid={`filter-${filter.value}`}
             >
-              <img src={filter.icon} alt={filter.label} className="h-5 w-5" />
+              <span>{filter.emoji}</span>
               {filter.label}
             </Button>
           ))}
