@@ -97,20 +97,20 @@ export function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group" data-testid="link-logo">
               <div className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-heading font-bold text-xl">
-                W
+                T
               </div>
               <div className="flex flex-col">
                 <span className={cn(
                   "font-heading font-bold text-lg leading-tight transition-colors",
                   isScrolled || !isHome ? "text-foreground" : "text-white"
                 )}>
-                  Wanderlust
+                  Travel World
                 </span>
                 <span className={cn(
                   "text-xs uppercase tracking-wider transition-colors",
                   isScrolled || !isHome ? "text-muted-foreground" : "text-white/80"
                 )}>
-                  Tours & Travel
+                  Holidays
                 </span>
               </div>
             </Link>
